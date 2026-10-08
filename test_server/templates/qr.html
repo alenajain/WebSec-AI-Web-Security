@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Scanner | WebSec</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand">WebSec</a>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+
+<main class="message-page">
+
+    <section class="message-hero">
+
+        <div class="mini-guardian">
+            <div class="guardian-ring"></div>
+            <div class="guardian-core">◈</div>
+        </div>
+
+        <p class="eyebrow">QR LINK ANALYSIS</p>
+
+        <h1>What's behind this QR?</h1>
+
+        <p class="message-subtitle">
+            Upload a QR code and WebSec will inspect the
+            link hidden inside it.
+        </p>
+
+
+        <div class="scanner-card">
+
+            <div class="scanner-tabs">
+                <a href="/" class="tab">Link</a>
+                <a href="/message" class="tab">Message</a>
+                <a href="/qr" class="tab active">QR</a>
+            </div>
+
+
+            <form action="/analyze-qr"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  class="message-form">
+
+                <label class="input-label">
+                    Upload QR image
+                </label>
+
+                <input
+                    type="file"
+                    name="qr_image"
+                    accept="image/*"
+                    required
+                >
+
+                <button type="submit" class="scan-button">
+                    Investigate QR ✦
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="trust-row">
+            <span>✦ QR decoding</span>
+            <span>✦ Link inspection</span>
+            <span>✦ Explainable results</span>
+        </div>
+
+    </section>
+
+</main>
+
+
+<div class="scan-overlay" id="scanOverlay">
+
+    <div class="scan-orb">
+        <div class="scan-ring"></div>
+        <div class="scan-core">◈</div>
+    </div>
+
+    <h2>Investigating...</h2>
+
+    <p id="scanStatus">
+        Reading the QR code
+    </p>
+
+    <div class="scan-progress">
+        <div class="scan-progress-bar"></div>
+    </div>
+
+    <small>WebSec Guardian is inspecting this QR code</small>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

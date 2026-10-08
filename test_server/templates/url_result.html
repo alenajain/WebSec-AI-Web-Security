@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebSec — Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand" style="text-decoration:none; color:white;">
+        <span class="brand-icon">◈</span>
+        WebSec
+    </a>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+
+<main class="result-page">
+
+    <div class="result-card {{ risk_level|lower }}">
+
+        <div class="result-icon">
+            {% if risk_level == "HIGH" %}
+                !
+            {% elif risk_level == "MEDIUM" %}
+                !
+            {% else %}
+                ✓
+            {% endif %}
+        </div>
+
+
+        <p class="result-label">
+            WebSec ANALYSIS
+        </p>
+
+
+        {% if risk_level == "HIGH" %}
+
+            <h1>Don't trust this link</h1>
+
+        {% elif risk_level == "MEDIUM" %}
+
+            <h1>Be careful with this link</h1>
+
+        {% else %}
+
+            <h1>No strong warning signs found</h1>
+
+        {% endif %}
+
+
+        <p class="result-message">
+            {{ message }}
+        </p>
+
+
+        <div class="risk-pill">
+            {{ risk_level }} RISK
+        </div>
+
+
+        {% if action != "BLOCK" %}
+
+            <a href="{{ url }}"
+               class="continue-button"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                Continue to website ↗
+
+            </a>
+
+        {% endif %}
+
+
+        <details class="know-more">
+
+            <summary>
+                Know More
+                <span>⌄</span>
+            </summary>
+
+
+            <div class="explanation-panel">
+
+                <h3>Why did WebSec make this decision?</h3>
+
+                <p>
+                    {{ reason }}
+                </p>
+
+
+                <div class="analysis-section">
+
+                    <h4>URL SECURITY INDICATORS</h4>
+
+                    {% if url_reasons %}
+
+                        {% for item in url_reasons %}
+                            <div class="indicator warning">
+                                ⚠ {{ item }}
+                            </div>
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="indicator good">
+                            ✓ No additional suspicious URL characteristics detected.
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <details class="technical-details">
+
+                    <summary>
+                        Technical Details
+                    </summary>
+
+                    <div class="technical-grid">
+
+                        <div>
+                            <span>Decision</span>
+                            <strong>{{ action }}</strong>
+                        </div>
+
+                        <div>
+                            <span>Risk level</span>
+                            <strong>{{ risk_level }}</strong>
+                        </div>
+
+                        <div>
+                            <span>HTTP anomaly signal</span>
+                            <strong>{{ "%.2f"|format(anomaly) }}%</strong>
+                        </div>
+
+                        <div>
+                            <span>Suspicious patterns</span>
+                            <strong>
+                                {% if detected_patterns %}
+                                    {{ detected_patterns|join(", ") }}
+                                {% else %}
+                                    None
+                                {% endif %}
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+        </details>
+
+
+        <div class="result-footer">
+
+            {% if scan_source == "qr" %}
+                <a href="/qr">← Scan another QR</a>
+            {% else %}
+                <a href="/">← Check another link</a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

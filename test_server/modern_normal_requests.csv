@@ -1,0 +1,72 @@
+Method,User-Agent,host,cookie,content-type,content,URL,classification
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/about,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/products,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=laptop,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=10,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=phone,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=phone,0
+GET,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",127.0.0.1:8000,,,,http://127.0.0.1:8000/,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/about,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/products,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/contact,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/help,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/news,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/dashboard,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/settings,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=laptop,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=phone,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=books,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=shoes,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=headphones,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=camera,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=bag,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=watch,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=keyboard,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=mouse,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=tablet,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=charger,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=monitor,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=student,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=python,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=network,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=security,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=machine+learning,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=database,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/search?q=software,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=1,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=2,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=3,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=5,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=10,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=15,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=20,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=25,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=30,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=50,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=75,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=100,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=120,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=150,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=200,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=250,0
+GET,python-requests/2.34.2,127.0.0.1:8000,,,,http://127.0.0.1:8000/profile?id=300,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""alice"", ""password"": ""hello123""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""john"", ""password"": ""password123""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""student"", ""password"": ""college2026""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""adminuser"", ""password"": ""welcome123""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""maya"", ""password"": ""mypassword""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""alex"", ""password"": ""test1234""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""user01"", ""password"": ""sample123""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""username"": ""demo"", ""password"": ""demo2026""}",http://127.0.0.1:8000/login,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""name"": ""Alice"", ""email"": ""alice@example.com"", ""age"": 20}",http://127.0.0.1:8000/register,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""name"": ""John"", ""email"": ""john@example.com"", ""age"": 25}",http://127.0.0.1:8000/register,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""name"": ""Maya"", ""email"": ""maya@example.com"", ""age"": 19}",http://127.0.0.1:8000/register,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""name"": ""Alex"", ""email"": ""alex@example.com"", ""age"": 30}",http://127.0.0.1:8000/register,0
+POST,python-requests/2.34.2,127.0.0.1:8000,,application/json,"{""name"": ""Student"", ""email"": ""student@example.com"", ""age"": 21}",http://127.0.0.1:8000/register,0

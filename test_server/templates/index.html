@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSec</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="brand">
+        <span class="brand-icon">◈</span>
+        WebSec
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+
+<main class="hero">
+
+    <div class="guardian">
+
+        <div class="guardian-ring ring-one"></div>
+        <div class="guardian-ring ring-two"></div>
+
+        <div class="guardian-core">
+            <span>W</span>
+        </div>
+
+    </div>
+
+
+    <p class="eyebrow">YOUR DIGITAL GUARDIAN</p>
+
+    <h1>
+        Think before you
+        <span>trust.</span>
+    </h1>
+
+    <p class="subtitle">
+        Drop something suspicious below.
+        WebSec will investigate it before you do.
+    </p>
+
+
+    <div class="scanner-card">
+
+        <div class="scanner-tabs">
+
+            <button class="tab active">
+                🔗 Link
+            </button>
+
+            <a href="/message" class="tab">
+                💬 Message
+            </a>
+
+            <a href="/qr" class="tab">QR</a>
+
+        </div>
+
+
+        <form method="POST" action="/" class="scan-form">
+
+            <div class="input-wrapper">
+                <span>⌁</span>
+
+                <input
+                    type="text"
+                    name="url"
+                    placeholder="Paste a suspicious link..."
+                    required
+                >
+            </div>
+
+            <button type="submit" class="scan-button">
+                Check this for me
+                <span>✦</span>
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="trust-row">
+
+        <div>
+            <span>✦</span>
+            AI assisted
+        </div>
+
+        <div>
+            <span>◎</span>
+            Explainable results
+        </div>
+
+        <div>
+            <span>◈</span>
+            Privacy focused
+        </div>
+
+    </div>
+
+</main>
+
+
+<div class="scan-overlay" id="scanOverlay">
+    <div class="scan-orb">
+        <div class="scan-ring"></div>
+        <div class="scan-core">◈</div>
+    </div>
+
+    <h2>Investigating...</h2>
+    <p id="scanStatus">Looking for warning signs</p>
+
+    <div class="scan-progress">
+        <div class="scan-progress-bar"></div>
+    </div>
+
+    <small>WebSec Guardian is checking this link</small>
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

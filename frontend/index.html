@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web Security Detector</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Web Security Detector</h1>
+
+        <p class="subtitle">
+            Detect whether an HTTP request is Normal or Anomalous
+        </p>
+          <div class="stats">
+    <div class="stat-card">
+        <h3>Total</h3>
+        <p id="totalCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Normal</h3>
+        <p id="normalCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Anomalous</h3>
+        <p id="anomalousCount">0</p>
+    </div>
+</div>
+
+        <form id="requestForm">
+
+            <label>Method</label>
+            <input type="text" id="Method" placeholder="GET" value="GET">
+
+            <label>User-Agent</label>
+            <input type="text" id="User-Agent"
+                   placeholder="Mozilla/5.0">
+
+            <label>Host</label>
+            <input type="text" id="host"
+                   placeholder="localhost:8080">
+
+            <label>Cookie</label>
+            <input type="text" id="cookie"
+                   placeholder="JSESSIONID=...">
+
+            <label>Content-Type</label>
+            <input type="text" id="content-type"
+                   placeholder="application/x-www-form-urlencoded">
+
+            <label>Content</label>
+            <textarea id="content"
+                      placeholder="Request body"></textarea>
+
+            <label>URL</label>
+            <input type="text" id="URL"
+                   placeholder="http://localhost:8080/tienda1/index.jsp HTTP/1.1">
+
+            <button type="submit">
+                Analyze Request
+            </button>
+
+        </form>
+
+        <div id="result" class="result hidden">
+
+    <div class="status-icon" id="statusIcon">🛡️</div>
+
+    <h2 id="resultText"></h2>
+
+    <div class="confidence-section">
+
+        <div class="confidence-label">
+            <span>Normal</span>
+            <span id="normalProbability"></span>
+        </div>
+
+        <div class="progress-bar">
+            <div id="normalBar" class="progress-fill"></div>
+        </div>
+
+        <div class="confidence-label">
+            <span>Anomalous</span>
+            <span id="anomalousProbability"></span>
+        </div>
+
+        <div class="progress-bar">
+            <div id="anomalousBar" class="progress-fill"></div>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+<h2 class="history-title">Request History</h2>
+
+<div id="history" class="history">
+    <p class="empty-history">No requests analyzed yet.</p>
+</div>
+    <script src="script.js"></script>
+
+</body>
+</html>

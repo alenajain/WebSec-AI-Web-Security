@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSec — History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand" style="text-decoration:none; color:white;">
+        <span class="brand-icon">◈</span>
+        WebSec
+    </a>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+<main class="dashboard-page">
+
+    <div class="dashboard-heading">
+        <p class="eyebrow">SCAN HISTORY</p>
+
+        <h1>
+            Previous <span>investigations.</span>
+        </h1>
+
+        <p>
+            Review links previously analyzed by WebSec.
+        </p>
+    </div>
+
+
+    <section class="activity-card">
+
+        {% if logs %}
+
+        <div class="history-table">
+
+            <div class="history-row history-head">
+                <span>Website</span>
+                <span>Risk</span>
+                <span>Decision</span>
+                <span>AI Signal</span>
+                <span>Time</span>
+            </div>
+
+            {% for log in logs|reverse %}
+
+            <div class="history-row">
+
+                <div class="history-url">
+                    <span class="activity-dot"></span>
+                    <span>{{ log["URL"] }}</span>
+                </div>
+
+                <div>
+                    <span class="mini-risk {{ log['Risk Level']|lower }}">
+                        {{ log["Risk Level"] }}
+                    </span>
+                </div>
+
+                <div>
+                    <span class="decision">
+                        {{ log["Decision"] }}
+                    </span>
+                </div>
+
+                <div class="history-score">
+                    {{ log["ML Score"] }}%
+                </div>
+
+                <div class="history-time">
+                    {{ log["Time"] }}
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+            <span>◈</span>
+            <h3>No scan history yet</h3>
+            <p>Your URL investigations will appear here.</p>
+            <a href="/">Start investigating</a>
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebSec — Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand" style="text-decoration:none; color:white;">
+        <span class="brand-icon">◈</span>
+        WebSec
+    </a>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+
+<main class="dashboard-page">
+
+    <div class="dashboard-heading">
+        <p class="eyebrow">SECURITY OVERVIEW</p>
+        <h1>Your protection at a <span>glance.</span></h1>
+        <p>
+            A quick look at what WebSec has investigated.
+        </p>
+    </div>
+
+
+    <div class="stat-grid">
+
+        <div class="stat-card">
+            <span class="stat-icon">◎</span>
+            <h2>{{ total }}</h2>
+            <p>Total Scans</p>
+        </div>
+
+        <div class="stat-card allowed-stat">
+            <span class="stat-icon">✓</span>
+            <h2>{{ allowed }}</h2>
+            <p>Allowed</p>
+        </div>
+
+        <div class="stat-card warning-stat">
+            <span class="stat-icon">!</span>
+            <h2>{{ warnings }}</h2>
+            <p>Warnings</p>
+        </div>
+
+        <div class="stat-card blocked-stat">
+            <span class="stat-icon">×</span>
+            <h2>{{ blocked }}</h2>
+            <p>Blocked</p>
+        </div>
+
+    </div>
+
+
+    <section class="activity-card">
+
+        <div class="activity-header">
+            <div>
+                <p class="eyebrow">RECENT ACTIVITY</p>
+                <h2>Latest investigations</h2>
+            </div>
+
+            <a href="/logs">View all →</a>
+        </div>
+
+
+        {% if recent_logs %}
+
+            <div class="activity-list">
+
+                {% for log in recent_logs %}
+
+                    <div class="activity-item">
+
+                        <div class="activity-url">
+                            <span class="activity-dot"></span>
+
+                            <div>
+                                <strong>{{ log["URL"] }}</strong>
+                                <small>{{ log["Time"] }}</small>
+                            </div>
+                        </div>
+
+
+                        <div class="activity-badges">
+
+                            <span class="mini-risk {{ log['Risk Level']|lower }}">
+                                {{ log["Risk Level"] }}
+                            </span>
+
+                            <span class="decision">
+                                {{ log["Decision"] }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+                <span>◈</span>
+                <h3>No investigations yet</h3>
+                <p>Your recent WebSec scans will appear here.</p>
+                <a href="/">Start a scan</a>
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+</body>
+</html>

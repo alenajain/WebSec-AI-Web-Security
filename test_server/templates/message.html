@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebSec — Message Scanner</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand" style="text-decoration:none; color:white;">
+        <span class="brand-icon">◈</span>
+        WebSec
+    </a>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+
+<main class="message-page">
+
+    <!-- GUARDIAN -->
+    <div class="guardian message-guardian">
+
+        <div class="guardian-ring ring-one"></div>
+        <div class="guardian-ring ring-two"></div>
+
+        <div class="guardian-core">
+            <span>✦</span>
+        </div>
+
+    </div>
+
+
+    <p class="eyebrow">WebSec GUARDIAN</p>
+
+    <h1>Something feel <span>off?</span></h1>
+
+    <p class="message-subtitle">
+        Paste the suspicious message below.
+        WebSec will inspect the language, warning signs
+        and any links hidden inside it.
+    </p>
+
+
+    <div class="message-scanner-card">
+
+        <div class="scanner-tabs">
+
+            <a href="/" class="tab">
+                🔗 Link
+            </a>
+
+            <button class="tab active">
+                💬 Message
+            </button>
+
+            <a href="/qr" class="tab">QR</a>
+        </div>
+
+
+        <form action="/analyze-message"
+              method="POST"
+              class="message-form">
+
+            <textarea
+                name="message"
+                placeholder="Paste a suspicious SMS, WhatsApp message, email or alert here..."
+                required></textarea>
+
+            <button type="submit" class="scan-button">
+                Investigate this message
+                <span>✦</span>
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="message-checks">
+
+        <div>
+            <span>⚡</span>
+            <strong>Language</strong>
+            <small>Pressure & threats</small>
+        </div>
+
+        <div>
+            <span>⌁</span>
+            <strong>Links</strong>
+            <small>Suspicious destinations</small>
+        </div>
+
+        <div>
+            <span>✦</span>
+            <strong>AI Analysis</strong>
+            <small>Message patterns</small>
+        </div>
+
+    </div>
+
+</main>
+<div class="scan-overlay" id="scanOverlay">
+    <div class="scan-orb">
+        <div class="scan-ring"></div>
+        <div class="scan-core">◈</div>
+    </div>
+
+    <h2>Investigating...</h2>
+    <p id="scanStatus">Looking for warning signs</p>
+
+    <div class="scan-progress">
+        <div class="scan-progress-bar"></div>
+    </div>
+<small>WebSec Guardian is checking this message</small>
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebSec — Message Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand" style="text-decoration:none; color:white;">
+        <span class="brand-icon">◈</span>
+        WebSec
+    </a>
+
+    <div class="nav-links">
+        <a href="/">Scan</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logs">History</a>
+    </div>
+</nav>
+
+
+<main class="result-page">
+
+    <div class="result-card {{ risk|lower }}">
+
+        <!-- GUARDIAN STATUS ICON -->
+
+        <div class="result-icon">
+            {% if risk == "HIGH" %}
+                !
+            {% elif risk == "MEDIUM" %}
+                !
+            {% else %}
+                ✓
+            {% endif %}
+        </div>
+
+
+        <p class="result-label">
+            WebSec GUARDIAN
+        </p>
+
+
+        <!-- HUMAN-FRIENDLY VERDICT -->
+
+        {% if risk == "HIGH" %}
+
+            <h1>Don't trust this</h1>
+
+            <p class="result-message">
+                WebSec found multiple warning signs in this message.
+            </p>
+
+        {% elif risk == "MEDIUM" %}
+
+            <h1>Be careful with this</h1>
+
+            <p class="result-message">
+                WebSec found some suspicious characteristics in this message.
+            </p>
+
+        {% else %}
+
+            <h1>No strong warning signs found</h1>
+
+            <p class="result-message">
+                WebSec didn't find strong scam indicators in this message.
+            </p>
+
+        {% endif %}
+
+
+        <div class="risk-pill">
+            {{ risk }} RISK
+        </div>
+
+
+        <!-- GUARDIAN ADVICE -->
+
+        <div class="guardian-advice">
+
+            <span class="advice-icon">◈</span>
+
+            <div>
+                <small>WHAT SHOULD I DO?</small>
+
+                <p>
+                    {{ guardian_message }}
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- KNOW MORE -->
+
+        <details class="know-more">
+
+            <summary>
+                Why did WebSec say this?
+                <span>⌄</span>
+            </summary>
+
+
+            <div class="explanation-panel">
+
+                <h3>Warning signs found</h3>
+
+
+                {% if reasons %}
+
+                    <div class="reason-grid">
+
+                        {% for reason in reasons %}
+
+                            <div class="reason-card">
+                                <span>⚠</span>
+                                <p>{{ reason }}</p>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% else %}
+
+                    <div class="indicator good">
+                        ✓ No common scam indicators detected.
+                    </div>
+
+                {% endif %}
+
+
+                <!-- URL SECTION -->
+
+                {% if extracted_urls %}
+
+                    <div class="detected-link">
+
+                        <small>LINK FOUND IN MESSAGE</small>
+
+                        <p>
+                            {{ extracted_urls[0] }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="analysis-section">
+
+                        <h4>LINK ANALYSIS</h4>
+
+                        {% if embedded_url_patterns %}
+
+                            {% for pattern in embedded_url_patterns %}
+
+                                <div class="indicator warning">
+                                    ⚠ Suspicious pattern:
+                                    {{ pattern }}
+                                </div>
+
+                            {% endfor %}
+
+                        {% endif %}
+
+
+                        {% if embedded_url_reasons %}
+
+                            {% for item in embedded_url_reasons %}
+
+                                <div class="indicator warning">
+                                    ⚠ {{ item }}
+                                </div>
+
+                            {% endfor %}
+
+                        {% endif %}
+
+
+                        {% if not embedded_url_patterns
+                              and not embedded_url_reasons %}
+
+                            <div class="indicator good">
+                                ✓ No additional suspicious link
+                                characteristics detected.
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+                {% endif %}
+
+
+                <!-- TECHNICAL DETAILS -->
+
+                <details class="technical-details">
+
+                    <summary>
+                        Technical analysis
+                    </summary>
+
+
+                    <div class="technical-grid">
+
+                        <div>
+                            <span>Message AI analysis</span>
+
+                            <strong>
+                                {{ "%.2f"|format(spam_probability) }}%
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>Scam indicators</span>
+
+                            <strong>
+                                {{ score }}
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>Risk level</span>
+
+                            <strong>
+                                {{ risk }}
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>Message classification</span>
+
+                            <strong>
+                                {{ verdict }}
+                            </strong>
+                        </div>
+
+
+                        {% if embedded_ml_score is not none %}
+
+                            <div>
+                                <span>HTTP anomaly signal</span>
+
+                                <strong>
+                                    {{ "%.2f"|format(embedded_ml_score) }}%
+                                </strong>
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <p class="technical-note">
+                        AI scores are supporting signals and should
+                        not be interpreted as a guarantee that a
+                        message or link is safe or malicious.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </details>
+
+
+        <div class="result-footer">
+
+            <a href="/message">
+                ← Check another message
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+</body>
+</html>

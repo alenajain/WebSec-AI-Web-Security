@@ -1,0 +1,16 @@
+URL,Expected
+https://www.google.com,0
+https://www.youtube.com,0
+https://www.wikipedia.org,0
+https://github.com,0
+https://www.google.com/search?q=python,0
+https://en.wikipedia.org/wiki/Machine_learning,0
+https://github.com/topics/python,0
+https://example.com/products?id=10,0
+https://example.com/search?q=laptop,0
+https://example.com/profile?user=alex,0
+http://example.com/search?q=<script>alert('test')</script>,1
+http://example.com/login?username=admin' OR '1'='1,1
+http://example.com/page?file=../../etc/passwd,1
+"http://example.com/search?q=UNION SELECT username,password",1
+http://example.com/page?next=javascript:alert('test'),1
